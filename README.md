@@ -9,6 +9,7 @@ This repo contains an example [hybrid](https://grafana.com/docs/k6/latest/using-
 
 The code in this repo combines a browser and HTTP protocol level test in a single script. The script runs a protocol level load test and also spins up a Chromium based browser to check the frontend for any unexpected usability issues throughout the checkout flow while the system is under load. 
 
+---
 
 ### Execution Steps
 
