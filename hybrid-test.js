@@ -125,11 +125,11 @@ export async function checkFrontend() {
     //page.screenshot({ path: 'screenshots/6_Checkout.png' });
 
     // Enter Shipping Information
-    page.locator('input[name="billing_first_name"]').type('FirstName');
+    page.locator('input[name="billing_first_name"]').type('Headless');
     sleep(.1);
-    page.locator('input[name="billing_last_name"]').type('LastName');
+    page.locator('input[name="billing_last_name"]').type('Chrome Browser');
     // sleep(.1);
-    // page.locator('input[name="billing_country"]').type('United Kingdom (UK)');
+    page.locator('input[name="billing_country"]').type('United Kingdom (UK)');
     sleep(.1);
     page.locator('input[name="billing_address_1"]').type('TEST-HOUSE, TEST-PLACE');
     sleep(.1);
