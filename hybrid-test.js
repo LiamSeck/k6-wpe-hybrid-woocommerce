@@ -27,7 +27,7 @@ export const options = {
   },
   // Defining test scenarios for protocol level and browser level load test
   scenarios: {
-    // Protol Level Test Config
+    // Protocol Level Test Config
     ProtocolLevelScenario: {
       exec: 'backendLoad',
       executor: 'constant-vus',
