@@ -19,7 +19,7 @@ The code in this repo combines a browser and HTTP protocol level test in a singl
 k6 run hybrid-test.js
 ``` 
 
-- K6 browser tests run in a headless browser by default. To disable this and to see the Chrome browser open add the complete the steps defined in `checkFrontend()` function defined in `hybrid-test.js` add the  `K6_BROWSER_HEADLESS=false` flag:
+- K6 browser tests run in a headless browser by default. To disable this and to see the Chrome browser open add the complete the steps defined in the `checkFrontend()` function found in `hybrid-test.js` add the  `K6_BROWSER_HEADLESS=false` flag:
 
 ```
 K6_BROWSER_HEADLESS=false k6 run hybrid-test.js
