@@ -39,7 +39,7 @@ export const options = {
         exec: 'checkFrontend',
         executor: 'constant-vus',
         vus: 1,
-        duration: "1m",   
+        duration: "2m",   
         options: {
           browser: {
             type: 'chromium', 
@@ -129,11 +129,11 @@ export async function checkFrontend() {
     sleep(.1);
     page.locator('input[name="billing_last_name"]').type('Chrome Browser');
     // sleep(.1);
-    page.locator('input[name="billing_country"]').type('United Kingdom (UK)');
+    //page.locator('input[name="billing_country"]').type('United Kingdom (UK)');
     sleep(.1);
-    page.locator('input[name="billing_address_1"]').type('TEST-HOUSE, TEST-PLACE');
+    page.locator('input[name="billing_address_1"]').type('HEADLESS-TEST-HOUSE, HEADLESS-TEST-PLACE');
     sleep(.1);
-    page.locator('input[name="billing_city"]').type('TEST-CITY');
+    page.locator('input[name="billing_city"]').type('HEADLESS-TEST-CITY');
     sleep(.1);
     page.locator('input[name="billing_state"]').type('');
     sleep(.1);
@@ -152,7 +152,7 @@ export async function checkFrontend() {
 
     // Sleep
     
-    sleep(3);
+    sleep(5);
     // Close the browser
     page.close();
   }
