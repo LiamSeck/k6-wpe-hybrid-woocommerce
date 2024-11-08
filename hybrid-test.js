@@ -39,7 +39,7 @@ export const options = {
         exec: 'checkFrontend',
         executor: 'constant-vus',
         vus: 1,
-        duration: "2m",   
+        duration: "1m",   
         options: {
           browser: {
             type: 'chromium', 
@@ -126,22 +126,23 @@ export async function checkFrontend() {
 
     // Enter Shipping Information
     page.locator('input[name="billing_first_name"]').type('Headless');
-    sleep(.1);
+    sleep(1);
     page.locator('input[name="billing_last_name"]').type('Chrome Browser');
     // sleep(.1);
     //page.locator('input[name="billing_country"]').type('United Kingdom (UK)');
-    sleep(.1);
+    sleep(1);
     page.locator('input[name="billing_address_1"]').type('HEADLESS-TEST-HOUSE, HEADLESS-TEST-PLACE');
-    sleep(.1);
+    sleep(1);
     page.locator('input[name="billing_city"]').type('HEADLESS-TEST-CITY');
-    sleep(.1);
+    sleep(1);
     page.locator('input[name="billing_state"]').type('');
-    sleep(.1);
+    sleep(1);
     page.locator('input[name="billing_postcode"]').type('AA901XX');
-    sleep(.1);
+    sleep(1);
     page.locator('input[name="billing_phone"]').type('0000000000');
-    sleep(.1);
+    sleep(1);
     page.locator('input[name="billing_email"]').type('test@test.com');
+    sleep(1);
     page.screenshot({ path: 'screenshots/7_Shipping_Info.png' });
 
     // Click on the place order button
@@ -149,7 +150,7 @@ export async function checkFrontend() {
     placeOrderButton.click();
     //await Promise.all([page.waitForNavigation(), placeOrderButton.click()]);
     page.screenshot({ path: 'screenshots/8_Order_Placed.png'});
-    sleep(5);
+    sleep(1);
     // Close the browser
     await page.close();
   }
