@@ -153,8 +153,8 @@ export async function checkFrontend() {
     const placeOrderButton = page.locator('//*[@id="place_order"]');
     placeOrderButton.click();
     //await Promise.all([page.waitForNavigation(), placeOrderButton.click()]);
-    page.screenshot({ path: 'screenshots/8_OrderPlaced.png'});
     sleep(1);
+    page.screenshot({ path: 'screenshots/8_OrderPlaced.png'});
     // Close the browser
     await page.close();
   }
