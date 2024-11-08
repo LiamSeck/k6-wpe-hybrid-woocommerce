@@ -84,10 +84,16 @@ export async function backendLoad() {
   submitCheckout();
 }
 
-
 export async function checkFrontend() {
     // Initiate a new browser
-    const context = await browser.newContext();
+    const context = await browser.newContext(
+      {
+        // Define browsers viewport
+        viewport: {
+          width: 1920,
+          height: 1080,
+      }
+    });
     const page = await context.newPage();
 
     // Go to homepage
@@ -100,7 +106,7 @@ export async function checkFrontend() {
     sleep(3);
     page.screenshot({ path: 'screenshots/2_ProductsPage.png' });
 
-    // Click on first product on product page https://liamseprod.wpenginepowered.com/products/ 
+    // Click on first product on product page
     const ClickOnProduct = page.locator('//*[@id="genesis-content"]/article/div/div/ul/li[1]/a[1]/img');
     await Promise.all([page.waitForNavigation(), ClickOnProduct.click()]);
     sleep(3);
