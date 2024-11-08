@@ -92,37 +92,37 @@ export async function checkFrontend() {
 
     // Go to homepage
     await page.goto(`https://${base_url}/`);
-    //page.screenshot({ path: 'screenshots/1_homepage.png' });
+    page.screenshot({ path: 'screenshots/1_homepage.png' });
     sleep(3);
 
     // Go to product page
     await page.goto(`https://${base_url}/products/`);
     sleep(3);
-    //page.screenshot({ path: 'screenshots/2_productpage.png' });
+    page.screenshot({ path: 'screenshots/2_productspage.png' });
 
     // Click on first product on product page https://liamseprod.wpenginepowered.com/products/ 
     const ClickOnProduct = page.locator('//*[@id="genesis-content"]/article/div/div/ul/li[1]/a[1]/img');
     await Promise.all([page.waitForNavigation(), ClickOnProduct.click()]);
     sleep(3);
-    //page.screenshot({ path: 'screenshots/3_AllProducts.png' });
+    page.screenshot({ path: 'screenshots/3_AllProducts.png' });
 
     // Click Add to Basket on https://liamseprod.wpenginepowered.com/product/test-prod-one/
     const AddToBasket = page.locator('//*[@id="product-47"]/div[2]/form/button');
     await Promise.all([page.waitForNavigation(), AddToBasket.click()]);
     sleep(3);
-    //page.screenshot({ path: 'screenshots/4_AddToCart.png' });
+    page.screenshot({ path: 'screenshots/4_ClickAddToCart.png' });
 
     // View Basket https://liamseprod.wpenginepowered.com/cart/
     const viewBasket = page.locator('//*[@id="genesis-content"]/div[1]/div/a');
     await Promise.all([page.waitForNavigation(), viewBasket.click()]);
     sleep(3);
-    //page.screenshot({ path: 'screenshots/5_ViewBasket.png' });
+    page.screenshot({ path: 'screenshots/5_ViewBasket.png' });
 
     // Proceed to Checkout https://liamseprod.wpenginepowered.com/checkout/
     const proceedToCheckout = page.locator('//*[@id="genesis-content"]/article/div/div/div[2]/div/div/a');
     await Promise.all([page.waitForNavigation(), proceedToCheckout.click()]);
     sleep(3);
-    //page.screenshot({ path: 'screenshots/6_Checkout.png' });
+    page.screenshot({ path: 'screenshots/6_ClickProceedToCheckout.png' });
 
     // Enter Shipping Information
     page.locator('input[name="billing_first_name"]').type('Headless');
@@ -142,17 +142,14 @@ export async function checkFrontend() {
     page.locator('input[name="billing_phone"]').type('0000000000');
     sleep(.1);
     page.locator('input[name="billing_email"]').type('test@test.com');
-    //page.screenshot({ path: 'screenshots/7_Shipping_Info.png' });
+    page.screenshot({ path: 'screenshots/7_Shipping_Info.png' });
 
     // Click on the place order button
-   
     const placeOrderButton = page.locator('//*[@id="place_order"]');
-    await Promise.all([page.waitForNavigation(), placeOrderButton.click()]);
-    //page.screenshot({ path: 'screenshots/8_Order_Placed.png'});
-
-    // Sleep
-    
+    placeOrderButton.click();
+    //await Promise.all([page.waitForNavigation(), placeOrderButton.click()]);
+    page.screenshot({ path: 'screenshots/8_Order_Placed.png'});
     sleep(5);
     // Close the browser
-    page.close();
+    await page.close();
   }
