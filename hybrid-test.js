@@ -92,13 +92,13 @@ export async function checkFrontend() {
 
     // Go to homepage
     await page.goto(`https://${base_url}/`);
-    page.screenshot({ path: 'screenshots/1_homepage.png' });
+    page.screenshot({ path: 'screenshots/1_Homepage.png' });
     sleep(3);
 
     // Go to product page
     await page.goto(`https://${base_url}/products/`);
     sleep(3);
-    page.screenshot({ path: 'screenshots/2_productspage.png' });
+    page.screenshot({ path: 'screenshots/2_ProductsPage.png' });
 
     // Click on first product on product page https://liamseprod.wpenginepowered.com/products/ 
     const ClickOnProduct = page.locator('//*[@id="genesis-content"]/article/div/div/ul/li[1]/a[1]/img');
@@ -128,8 +128,6 @@ export async function checkFrontend() {
     page.locator('input[name="billing_first_name"]').type('Headless');
     sleep(1);
     page.locator('input[name="billing_last_name"]').type('Chrome Browser');
-    // sleep(.1);
-    //page.locator('input[name="billing_country"]').type('United Kingdom (UK)');
     sleep(1);
     page.locator('input[name="billing_address_1"]').type('HEADLESS-TEST-HOUSE, HEADLESS-TEST-PLACE');
     sleep(1);
@@ -149,7 +147,7 @@ export async function checkFrontend() {
     const placeOrderButton = page.locator('//*[@id="place_order"]');
     placeOrderButton.click();
     //await Promise.all([page.waitForNavigation(), placeOrderButton.click()]);
-    page.screenshot({ path: 'screenshots/8_Order_Placed.png'});
+    page.screenshot({ path: 'screenshots/8_OrderPlaced.png'});
     sleep(1);
     // Close the browser
     await page.close();
